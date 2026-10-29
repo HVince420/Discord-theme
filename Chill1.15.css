@@ -1,5 +1,5 @@
 .membersWrap_c8ffbb {
-    transition: transform 0.5s ease, width 0.5s ease;
+    transition: transform 0.5s ease, width 0.5s ease, margin-left 0.5s ease;
     /* Shrink width by avatar width plus various padding (8px + 8px + XS space) */
     --member-list-collapsed-width: calc(32px + 2 * (16px + var(--space-xs)));
     --member-list-collapsed-transform: calc((var(--custom-member-list-width) - var(--member-list-collapsed-width)));
@@ -8,7 +8,7 @@
     width: var(--custom-member-list-width) !important;
 }
 
-/* Itt állítottuk át a left margint 0-ra */
+/* Hover állapot: a margin is átmegy 0-ra a sima animációval */
 .membersWrap_c8ffbb:hover {
     transform: none !important;
     margin-left: 0 !important;
@@ -136,6 +136,16 @@ div:not(:hover) > .members_c8ffbb > div {
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout),
 .inner_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
     transition: transform 0.5s ease, border-radius 0.5s ease;
+}
+
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout):hover,
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout):hover .inner_c0bea0 {
+    transform: none;
+    border-radius: var(--memberlist-border-radius) 0 0 var(--memberlist-border-radius);
+}
+
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .banner__68edb {
+    transition: border-radius 0.5s ease;
 }
 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout
