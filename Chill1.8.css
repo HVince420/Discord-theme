@@ -7,7 +7,7 @@
     margin-left: calc(-1 * var(--member-list-collapsed-transform));
     transform: translateX(var(--member-list-collapsed-transform));
     width: fit-content !important;
-    min-width: unset !important;
+    min-width: fit-content !important;
 }
 
 .membersWrap_c8ffbb:hover {
