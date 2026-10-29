@@ -8,9 +8,10 @@
     width: var(--custom-member-list-width) !important;
 }
 
-/* Amikor ráviszed az egeret bárhová a sávra, simán visszaugrik normál méretre */
+/* Itt állítottuk be a hover paraméterben a 256 pixeles left margint és a nullázott transformot */
 .membersWrap_c8ffbb:hover {
-    transform: translateX(0) !important;
+    transform: none !important;
+    margin-left: 256px !important;
 }
 
 .members_c8ffbb {
