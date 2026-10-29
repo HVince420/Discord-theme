@@ -8,10 +8,10 @@
     width: var(--custom-member-list-width) !important;
 }
 
-/* Itt állítottuk be a hover paraméterben a 256 pixeles left margint és a nullázott transformot */
+/* Itt állítottuk át a left margint 128 pixelre */
 .membersWrap_c8ffbb:hover {
     transform: none !important;
-    margin-left: 256px !important;
+    margin-left: 128px !important;
 }
 
 .members_c8ffbb {
