@@ -1,6 +1,3 @@
-/* ==========================================
-   1. SZERVER TAGLISTA (Members Wrap)
-   ================================---------- */
 .membersWrap_c8ffbb {
     transition: transform 0.5s ease;
     /* Shrink width by avatar width plus various padding (8px + 8px + XS space) */
@@ -8,7 +5,6 @@
     --member-list-collapsed-transform: calc((var(--custom-member-list-width) - var(--member-list-collapsed-width)));
     margin-left: calc(-1 * var(--member-list-collapsed-transform));
     transform: translateX(var(--member-list-collapsed-transform));
-    height: 100%;
 }
 
 .membersWrap_c8ffbb:hover {
@@ -17,19 +13,24 @@
 
 .members_c8ffbb {
     z-index: 1;
-    background-color: #0000;
-    transition: 0.5s ease;
 }
 
 div:not(:hover) > .members_c8ffbb > div {
     padding-top: 10px;
 }
 
+.members_c8ffbb {
+    background-color: #0000;
+    transition: 0.5s ease;
+}
+
 .members_c8ffbb:hover {
     border-radius: var(--memberlist-border-radius) 0 0 var(--memberlist-border-radius);
+    /*margin-right: 15px;*/
     margin-bottom: 15px;
 }
 
+/*We could for instance let user control the color via a css var*/
 .theme-light .members_c8ffbb:hover {
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 100%);
 }
@@ -38,7 +39,12 @@ div:not(:hover) > .members_c8ffbb > div {
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
 }
 
-/* Realign headers */
+/* Make the list fill the window height */
+.membersWrap_c8ffbb {
+    height: 100%;
+}
+
+/* Realign headers to be more visible when collapsed */
 .membersGroup_c8ffbb {
     transition: padding 0.5s ease;
 }
@@ -57,6 +63,7 @@ div:not(:hover) > .members_c8ffbb > div {
 }
 
 .membersWrap_c8ffbb:not(:hover) .contentImage__42bf5 {
+    /* Undo expanded spacing and normal list width, then apply collapsed list width and necessary spacing to center the icon */
     transform: translateX(calc(18px - var(--custom-member-list-width) + var(--member-list-collapsed-width) - ((var(--member-list-collapsed-width) - 48px) / 2)));
 }
 
@@ -74,19 +81,26 @@ div:not(:hover) > .members_c8ffbb > div {
     border: none !important;
 }
 
-.infoSection__0f2e8,
+.infoSection__0f2e8 {
+    transition: opacity 0.5s ease;
+}
+
+.membersWrap_c8ffbb:not(:hover) .infoSection__0f2e8 {
+    opacity: 0;
+}
+
+/* Fade out usernames when collapsed */
 .content__91a9d {
     transition: opacity 0.5s ease;
 }
 
-.membersWrap_c8ffbb:not(:hover) .infoSection__0f2e8,
 .membersWrap_c8ffbb:not(:hover) .content__91a9d {
     opacity: 0;
 }
 
 /* Fix the member count addon (vencord) */
 .members_c8ffbb:hover .vc-membercount-widget {
-    height: 40px;  
+    height: 40px;  /* 52px non-hover height minus 12px non-hover margin */
 }
 
 .members_c8ffbb:not(:hover) .vc-membercount-widget {
@@ -107,18 +121,17 @@ div:not(:hover) > .members_c8ffbb > div {
     flex-wrap: wrap;
 }
 
-
-/* ==========================================
-   2. DM PROFIL PANEL (Avatar-only DM Profile)
-   ================================---------- */
+/* Avatar-only DM profile */
+ .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) is the only way to select just the DM profile area 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
+    !* Main transform *!
     transform: translate(275px);
     margin-left: -275px;
 }
 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout),
 .inner_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
-    transition: transform 0.5s ease, border-radius 0.5s ease;
+   transition: transform 0.5s ease, border-radius 0.5s ease;
 }
 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout):hover,
@@ -135,7 +148,8 @@ div:not(:hover) > .members_c8ffbb > div {
     border-top-left-radius: var(--memberlist-border-radius);
 }
 
-.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .avatar__75742 {
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .avatar__75742 {*/
+/*    !* Move profile picture out to still be visible when collapsed *!*/
     transform: translate(-56px);
     transition: transform 0.5s ease;
 }
@@ -146,12 +160,13 @@ div:not(:hover) > .members_c8ffbb > div {
 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .none_c49869,
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .inner_c0bea0 {
+/*    !* Disable scrolling to allow profile to overflow the outer element *!*/
     overflow: visible !important;
 }
 
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .body_b32ca4,
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) .overlay_c0bea0 {
-    opacity: 0;
+    opacity: 0;*/
     transition: opacity 0.5s ease;
 }
 
