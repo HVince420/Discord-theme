@@ -1,0 +1,28 @@
+/* ==========================================
+   MINIMALISTA ÉS STABIL TAGLISTA ÖSSZEHÚZÁS
+   ================================---------- */
+
+/* A taglista alaphelyzetben legyen keskeny (csak a kép látszódjon) */
+.membersWrap_c8ffbb {
+    min-width: 60px !important;
+    width: 60px !important;
+    transition: width 0.3s ease, margin 0.3s ease !important;
+}
+
+/* Ha ráviszed az egeret, nyíljon ki rendes szélességűre */
+.membersWrap_c8ffbb:hover {
+    min-width: 240px !important;
+    width: 240px !important;
+}
+
+/* Rejtsük el a neveket, amikor nincs rajta az egér */
+.membersWrap_c8ffbb:not(:hover) .username_c8ffbb,
+.membersWrap_c8ffbb:not(:hover) .roleColor_c8ffbb,
+.membersWrap_c8ffbb:not(:hover) .membersGroup_c8ffbb {
+    display: none !important;
+}
+
+/* Középre igazítás összecsukott állapotban */
+.membersWrap_c8ffbb:not(:hover) .member_c8ffbb {
+    padding: 0 8px !important;
+}
