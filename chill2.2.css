@@ -1,0 +1,62 @@
+/* ==========================================
+   MINIMALISTA & STABIL TAGLISTA + AKTIVITÁS KÉP
+   ================================---------- */
+
+/* 1. Alaphelyzetben keskeny (csak a profilképek/ikonok látszódjanak) */
+.membersWrap_c8ffbb {
+    min-width: 60px !important;
+    width: 60px !important;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), min-width 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden !important;
+}
+
+/* Ha ráviszed az egeret: 252px szélesre nyílik */
+.membersWrap_c8ffbb:hover {
+    min-width: 252px !important;
+    width: 252px !important;
+}
+
+/* 2. Nevek és szövegek elhalványítása */
+.membersWrap_c8ffbb .username_c8ffbb,
+.membersWrap_c8ffbb .roleColor_c8ffbb,
+.membersWrap_c8ffbb .membersGroup_c8ffbb,
+.membersWrap_c8ffbb .activity_c5f96a {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out !important;
+}
+
+/* Ha rajta van az egér, lassan feltűnnek a nevek és az aktivitás szövege */
+.membersWrap_c8ffbb:hover .username_c8ffbb,
+.membersWrap_c8ffbb:hover .roleColor_c8ffbb,
+.membersWrap_c8ffbb:hover .membersGroup_c8ffbb,
+.membersWrap_c8ffbb:hover .activity_c5f96a {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.1s !important;
+}
+
+/* 3. Profilképek és Aktivitási képek kezelése összecsukva */
+.membersWrap_c8ffbb:not(:hover) .member_c8ffbb {
+    padding: 0 8px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Maga a profilkép látszódjon */
+.membersWrap_c8ffbb:not(:hover) .avatar_c5f96a {
+    position: relative !important;
+    display: block !important;
+}
+
+/* Ha van aktivitás kép (pl. játék ikon, Spotify albumkép stb.) */
+.membersWrap_c8ffbb:not(:hover) .activityImage_c5f96a,
+.membersWrap_c8ffbb:not(:hover) .contentImage__42bf5 {
+    display: block !important;
+    opacity: 1 !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+    padding: 0 8px !important;
+}
