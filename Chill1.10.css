@@ -6,10 +6,9 @@
     margin-left: calc(-1 * var(--member-list-collapsed-transform));
     transform: translateX(var(--member-list-collapsed-transform));
     width: var(--custom-member-list-width) !important;
-    min-width: unset !important;
 }
 
-/* Itt biztosítjuk, hogy egészre a wrapperre hatással legyen a hover, függetlenül a belső elemektől */
+/* Amikor ráviszed az egeret bárhová a sávra, simán visszaugrik normál méretre */
 .membersWrap_c8ffbb:hover {
     transform: translateX(0) !important;
 }
@@ -17,7 +16,6 @@
 .members_c8ffbb {
     z-index: 1;
     width: 100% !important;
-    min-width: unset !important;
 }
 
 div:not(:hover) > .members_c8ffbb > div {
@@ -127,7 +125,7 @@ div:not(:hover) > .members_c8ffbb > div {
 }
 
 /* Avatar-only DM profile */
- .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) is the only way to select just the DM profile area 
+/* .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) is the only way to select just the DM profile area */
 .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
 /*    !* Main transform *!*/
     transform: translate(275px);
