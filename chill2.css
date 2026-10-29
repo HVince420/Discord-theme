@@ -1,25 +1,36 @@
 /* ==========================================
-   MINIMALISTA ÉS STABIL TAGLISTA ÖSSZEHÚZÁS
+   MINIMALISTA ÉS STABIL TAGLISTA ÖSSZEHÚZÁS (ANIMÁLT)
    ================================---------- */
 
-/* A taglista alaphelyzetben legyen keskeny (csak a kép látszódjon) */
+/* Alaphelyzetben keskeny (csak a profilképek látszódnak) */
 .membersWrap_c8ffbb {
     min-width: 60px !important;
     width: 60px !important;
-    transition: width 0.3s ease, margin 0.3s ease !important;
+    /* Itt adtuk meg a sima, lassan kibomló animációt (0.35 másodperc) */
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), min-width 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden !important;
 }
 
-/* Ha ráviszed az egeret, nyíljon ki rendes szélességűre */
+/* Ha ráviszed az egeret: 240px + 12px = 252px szélesre nyílik */
 .membersWrap_c8ffbb:hover {
-    min-width: 240px !important;
-    width: 240px !important;
+    min-width: 252px !important;
+    width: 252px !important;
 }
 
-/* Rejtsük el a neveket, amikor nincs rajta az egér */
-.membersWrap_c8ffbb:not(:hover) .username_c8ffbb,
-.membersWrap_c8ffbb:not(:hover) .roleColor_c8ffbb,
-.membersWrap_c8ffbb:not(:hover) .membersGroup_c8ffbb {
-    display: none !important;
+/* A nevek és csoportok sima elhalványítása (fade-in / fade-out) */
+.membersWrap_c8ffbb .username_c8ffbb,
+.membersWrap_c8ffbb .roleColor_c8ffbb,
+.membersWrap_c8ffbb .membersGroup_c8ffbb {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out !important;
+}
+
+/* Ha rajta van az egér, lassan feltűnnek a nevek */
+.membersWrap_c8ffbb:hover .username_c8ffbb,
+.membersWrap_c8ffbb:hover .roleColor_c8ffbb,
+.membersWrap_c8ffbb:hover .membersGroup_c8ffbb {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0.1s !important; /* Kicsi késleltetés, hogy a nyílás közben szép legyen */
 }
 
 /* Középre igazítás összecsukott állapotban */
