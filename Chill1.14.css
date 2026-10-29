@@ -8,10 +8,10 @@
     width: var(--custom-member-list-width) !important;
 }
 
-/* Itt állítottuk át a left margint 64 pixelre */
+/* Itt állítottuk át a left margint 0-ra */
 .membersWrap_c8ffbb:hover {
     transform: none !important;
-    margin-left: 64px !important;
+    margin-left: 0 !important;
 }
 
 .members_c8ffbb {
@@ -126,4 +126,16 @@ div:not(:hover) > .members_c8ffbb > div {
 }
 
 /* Avatar-only DM profile */
-/* .outer_c0bea0:not(.user-profile-modal):
+/* .outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) is the only way to select just the DM profile area */
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
+/*    !* Main transform *!*/
+    transform: translate(275px);
+    margin-left: -275px;
+}
+
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout),
+.inner_c0bea0:not(.user-profile-modal):not(.user-profile-popout) {
+    transition: transform 0.5s ease, border-radius 0.5s ease;
+}
+
+.outer_c0bea0:not(.user-profile-modal):not(.user-profile-popout
