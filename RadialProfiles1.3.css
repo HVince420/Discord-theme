@@ -1,6 +1,8 @@
 :root {
   --rs-version: "2.0.11";
-  --rs-avatar-shape: 50%; /* Tökéletes kör profilkép */
+  --rs-avatar-shape: 50%; /* Ez teszi a profilképet tökéletes körré */
+  --rs-large-spacing: 2px;
+  --rs-small-spacing: 2px;
 }
 
 #app-mount .wrapper__44b0c {
