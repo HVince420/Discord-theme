@@ -1,6 +1,9 @@
 :root {
   --rs-version: "2.0.11";
   --rs-avatar-shape: 50%;
+  --rs-small-spacing: 2px;
+  --rs-medium-spacing: 3px;
+  --rs-large-spacing: 4px;
 }
 
 #app-mount .wrapper__44b0c {
@@ -48,15 +51,18 @@
   x: calc(var(--rs-members-width, 30px) / 2 - 2px);
   y: calc(var(--rs-members-width, 30px) / 2);
 }
-
-/* Profilkép körré alakítása */
-#app-mount .wrapper__44b0c img, 
-#app-mount .wrapper__44b0c.avatar__91a9d {
+#app-mount .wrapper__44b0c img, #app-mount .wrapper__44b0c.avatar__91a9d {
   border-radius: 50% !important;
   clip-path: circle(50% at center) !important;
 }
-
-/* Státusz körvonal (SVG rect helyett kör alakúvá kényszerítés) */
+#app-mount .wrapper__44b0c svg[width="25"][height="15"] > rect {
+  rx: 50% !important;
+  ry: 50% !important;
+}
+#app-mount .wrapper__44b0c[style*="80px"] svg.cursorDefault__44b0c rect, #app-mount .wrapper__44b0c[style*="120px"] svg.cursorDefault__44b0c rect {
+  ry: 50%;
+  rx: 50%;
+}
 #app-mount .wrapper__44b0c rect {
   x: 0;
   y: 0;
@@ -65,12 +71,11 @@
   -webkit-mask: none !important;
           mask: none !important;
   display: block;
-  rx: 100px !important;
-  ry: 100px !important;
+  rx: 50% !important;
+  ry: 50% !important;
   fill: transparent !important;
   stroke-width: var(--rs-small-width, 2px);
 }
-
 #app-mount .wrapper__44b0c rect[fill="#23a55a"], #app-mount .wrapper__44b0c rect[fill="#40a258"], #app-mount .wrapper__44b0c rect[fill="#43a25a"], #app-mount .wrapper__44b0c rect[fill="#45a366"] {
   stroke: var(--rs-online-color);
 }
@@ -89,7 +94,6 @@
 #app-mount .wrapper__44b0c rect[fill="#82858f"], #app-mount .wrapper__44b0c rect[fill="#82838b"], #app-mount .wrapper__44b0c rect[fill="#84858d"] {
   stroke: var(--rs-invisible-color);
 }
-
 #app-mount .wrapper__44b0c rect[x="16"] {
   width: 24px;
   height: 24px;
@@ -110,8 +114,8 @@
   height: 40px;
   x: -19;
   y: -20;
-  ry: 100px;
-  rx: 100px;
+  ry: 50%;
+  rx: 50%;
 }
 #app-mount .wrapper__44b0c[style*="40px"] foreignObject[mask*=mobile] img {
   width: calc(100% - 18px);
