@@ -63,11 +63,13 @@
   ry: 50%;
   rx: 50%;
 }
+
+/* Javított SVG gyűrű / státusz kör */
 #app-mount .wrapper__44b0c rect {
-  x: 0;
-  y: 0;
-  width: 100%;
-  height: 100%;
+  x: 2px;
+  y: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   -webkit-mask: none !important;
           mask: none !important;
   display: block;
@@ -76,6 +78,7 @@
   fill: transparent !important;
   stroke-width: var(--rs-small-width, 2px);
 }
+
 #app-mount .wrapper__44b0c rect[fill="#23a55a"], #app-mount .wrapper__44b0c rect[fill="#40a258"], #app-mount .wrapper__44b0c rect[fill="#43a25a"], #app-mount .wrapper__44b0c rect[fill="#45a366"] {
   stroke: var(--rs-online-color);
 }
