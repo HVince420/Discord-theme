@@ -1,13 +1,10 @@
 :root {
   --rs-version: "2.0.11";
   --rs-avatar-shape: 50%;
-  --rs-small-spacing: 2px;
-  --rs-medium-spacing: 3px;
-  --rs-large-spacing: 4px;
 }
 
 #app-mount .wrapper__44b0c {
-  border-radius: 50% !important;
+  border-radius: var(--rs-avatar-shape);
 }
 #app-mount .wrapper__44b0c svg:not(:root) {
   overflow: visible;
@@ -17,9 +14,8 @@
   transform: scale(1) !important;
 }
 #app-mount .wrapper__44b0c foreignObject {
-  -webkit-mask: none !important;
-          mask: none !important;
-  border-radius: 50% !important;
+  -webkit-mask: none;
+          mask: none;
 }
 #app-mount .wrapper__44b0c .dots__5ad89 circle {
   cy: 22.25 !important;
@@ -52,31 +48,30 @@
   y: calc(var(--rs-members-width, 30px) / 2);
 }
 #app-mount .wrapper__44b0c img, #app-mount .wrapper__44b0c.avatar__91a9d {
-  border-radius: 50% !important;
-  clip-path: circle(50% at center) !important;
+  border-radius: var(--rs-avatar-shape);
 }
 #app-mount .wrapper__44b0c svg[width="25"][height="15"] > rect {
-  rx: 50% !important;
-  ry: 50% !important;
+  rx: calc(var(--rs-avatar-shape) * 2) !important;
+  ry: calc(var(--rs-avatar-shape) * 2) !important;
 }
 #app-mount .wrapper__44b0c[style*="80px"] svg.cursorDefault__44b0c rect, #app-mount .wrapper__44b0c[style*="120px"] svg.cursorDefault__44b0c rect {
-  ry: 50%;
-  rx: 50%;
+  ry: calc(var(--rs-avatar-shape) * 3.3);
+  rx: calc(var(--rs-avatar-shape) * 3.3);
 }
 
-/* Javított SVG gyűrű / státusz kör */
+/* Kör alakú státusz gyűrű a kör alakú profilkép körül */
 #app-mount .wrapper__44b0c rect {
-  x: 2px;
-  y: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  -webkit-mask: none !important;
-          mask: none !important;
+  x: -2px;
+  y: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  -webkit-mask: none;
+          mask: none;
   display: block;
-  rx: 50% !important;
-  ry: 50% !important;
+  rx: 50%;
+  ry: 50%;
   fill: transparent !important;
-  stroke-width: var(--rs-small-width, 2px);
+  stroke-width: var(--rs-small-width);
 }
 
 #app-mount .wrapper__44b0c rect[fill="#23a55a"], #app-mount .wrapper__44b0c rect[fill="#40a258"], #app-mount .wrapper__44b0c rect[fill="#43a25a"], #app-mount .wrapper__44b0c rect[fill="#45a366"] {
@@ -117,8 +112,8 @@
   height: 40px;
   x: -19;
   y: -20;
-  ry: 50%;
-  rx: 50%;
+  ry: calc(var(--rs-avatar-shape) * 3.3);
+  rx: calc(var(--rs-avatar-shape) * 3.3);
 }
 #app-mount .wrapper__44b0c[style*="40px"] foreignObject[mask*=mobile] img {
   width: calc(100% - 18px);
@@ -133,7 +128,7 @@
   stroke-width: var(--rs-medium-width);
 }
 #app-mount .wrapper__44b0c[style*="80px"] img {
-  clip-path: circle(50% at center) !important;
+  clip-path: inset(calc(var(--rs-medium-spacing) + 1px) calc(var(--rs-medium-spacing) + 1px) round var(--rs-avatar-shape));
 }
 #app-mount .wrapper__44b0c[style*="120px"] rect {
   width: 120px;
@@ -142,10 +137,10 @@
   pointer-events: none;
 }
 #app-mount .wrapper__44b0c[style*="120px"] img {
-  clip-path: circle(50% at center) !important;
+  clip-path: inset(calc(var(--rs-large-spacing) + 1px) calc(var(--rs-large-spacing) + 1px) round var(--rs-avatar-shape));
 }
 #app-mount .wrapper__44b0c:not([style*="80px;"], [style*="120px;"], [style*="16px"]) > svg > foreignObject:not(:only-child) img {
-  clip-path: circle(50% at center) !important;
+  clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
 }
 #app-mount .wrapper__44b0c[style="width: 16px; height: 16px;"] rect {
   display: none;
@@ -194,7 +189,7 @@
   left: 2px;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  border-radius: 50%;
+  border-radius: var(--rs-avatar-shape);
   box-shadow: inset 0 0 0 2px var(--rs-self-speaking-colour, #57d39b), inset 0 0 0 3px var(--background-secondary);
 }
 #app-mount .message__5126c .wrapper__44b0c foreignObject[mask*=mobile] {
@@ -208,7 +203,7 @@
           mask: none;
 }
 #app-mount .avatarHintInner_f89da9 {
-  border-radius: 50% !important;
+  border-radius: var(--rs-avatar-shape) !important;
   padding-top: 0;
   width: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 2px);
   height: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 2px);
