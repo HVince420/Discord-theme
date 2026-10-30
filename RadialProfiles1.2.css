@@ -1,6 +1,6 @@
 :root {
   --rs-version: "2.0.11";
-  --rs-avatar-shape: 8px; /* <-- Ezzel állítod be, hogy ne legyen négyzetes (pl. 8px vagy 50% körhöz) */
+  --rs-avatar-shape: 50%; /* Tökéletes kör profilkép */
 }
 
 #app-mount .wrapper__44b0c {
